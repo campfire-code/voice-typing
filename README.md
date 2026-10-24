@@ -1,3 +1,58 @@
+# 语音速记（Handy）
+
+> 篝火出品 · 收录于篝火 App 应用区 · 基于开源项目 [cjpais/Handy](https://github.com/cjpais/Handy)（MIT）
+
+按住快捷键说话，松开后文字直接粘贴到你正在用的任何输入框里。语音识别在**自己电脑上离线完成，录音不上传云端**。
+
+## 下载
+
+到 [Releases](https://github.com/campfire-code/voice-typing/releases/latest) 下载：
+
+| 电脑 | 文件 |
+|---|---|
+| Windows 10 / 11（Intel / AMD） | `voice-typing_版本号_Handy_…_x64-setup.exe` |
+| Windows（Arm 芯片） | `voice-typing_版本号_Handy_…_arm64-setup.exe` |
+| Mac（Apple 芯片：M 系列） | `voice-typing_版本号_Handy_…_aarch64.dmg` |
+| Mac（Intel 芯片） | `voice-typing_版本号_Handy_…_x64.dmg` |
+| Linux（x86-64） | `voice-typing_版本号_Handy_…_amd64.AppImage` |
+
+- 安装包来自上游官方发布，篝火没有修改，附 `SHA256SUMS.txt` 可核对。
+- 上游另提供 Linux 的 deb、rpm、Arm 版 AppImage 和 Windows msi，篝火只转发布上表的文件；需要请到[上游发布页](https://github.com/cjpais/Handy/releases/tag/v0.9.8)下载。
+
+## 怎么用
+
+1. 安装后打开，按提示授予**麦克风**和**辅助功能**权限（上游说明键盘快捷键需要这些权限；Mac 在“系统设置 → 隐私与安全性”里开启）。
+2. 第一次使用时下载语音识别模型。上游提供 Whisper（Small / Medium / Turbo / Large，有 GPU 时可加速）和 Parakeet V3（为 CPU 优化，可自动识别语言）。模型较大，请保持联网，之后可离线使用。
+3. 在设置里选好快捷键。可以“按住说话、松开结束”，也可以“按一下开始、再按一下结束”。
+4. 点进任意输入框（微信、Word、浏览器都行），按住快捷键说话，松开后文字会自动粘贴进去。
+
+**说明**
+- 软件带有简体中文界面语言包，可在设置里切换；上游文档为英文。
+- 中文识别效果取决于所选模型，正式使用前请先用一段普通话试一试。
+- 使用 Mac 的 `fn`（地球仪）键作快捷键时，只在苹果自家键盘上有效，第三方键盘无效（上游说明的硬件限制），建议改用 `ctrl`、`option` 等组合。
+- Mac 用蓝牙耳机的麦克风时，录音期间可能音质变差，上游建议选择电脑自带或外接麦克风。
+- Linux 对 Wayland 的支持有限（上游说明）。
+
+## 验收用例
+
+| 操作 | 应得到 |
+|---|---|
+| 安装并打开，授予麦克风和辅助功能权限，下载模型 | 主界面可选择模型和快捷键 |
+| 在记事本里按住快捷键说一句话，松开 | 这句话的文字出现在记事本里 |
+
+## 和上游的区别
+
+- 仅新增中文说明与篝火发布流程（`tool.json`、`.github/workflows/release.yml`），并删除了上游的 GitHub 工作流，软件代码与上游一致。
+
+## 归属与许可证
+
+软件版权属于 Handy 项目作者，使用 MIT 许可证（见 `LICENSE`）。
+
+
+---
+
+## 以下为上游原文
+
 # Handy
 
 [![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/invite/WVBeWsNXK4)

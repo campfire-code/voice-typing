@@ -1,0 +1,10 @@
+{
+  "id": "o19",
+  "slug": "voice-typing",
+  "name": "语音速记",
+  "version": "0.9.8-campfire.1",
+  "repo": "campfire-code/voice-typing",
+  "license": "MIT",
+  "delivery": "mirror",
+  "upstream": { "repo": "cjpais/Handy", "license": "MIT", "tag": "v0.9.8" }
+}
